@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html <?php language_attributes(); ?>>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Auto Express</title>
@@ -14,10 +14,9 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/slick.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/media.css"> -->
-
-  
+  <link rel="stylesheet" href="css/media.css"> -->  
 </head>
+
 <body>
   
   <!--1 block-->
@@ -26,7 +25,8 @@
 
       <div class="header__top">
         <a href="#footer" class="logo">
-          <img src="images/logo.svg" alt="" class="logo__img">
+          <img src="<?php bloginfo('template_url'); ?>/assets/images/logo.svg" alt="" class="logo__img"> 
+          <!--bloginfo() - выводит информацию о сайте (подр: https://wp-kama.ru/function/bloginfo)-->
         </a>
         <a href="tel:+300505556677" class="phone">
           <h2>+7 (905) 555 66 77</h2>
@@ -42,19 +42,19 @@
         <a href="#" class="button">КОНСУЛЬТАЦИЯ ЭКСПЕРТА</a>
         <div class="social">
           <a class="social-item" href="#">
-            <img src="images/icon/instagram.svg" alt="instagram icon" class="social-img">
+            <img src="<?php bloginfo('template_url'); ?>/assets/images/icon/instagram.svg" alt="instagram icon" class="social-img">
           </a>
           <a class="social-item" href="#">
-            <img src="images/icon/telegram.svg" alt="telegram icon" class="social-img">
+            <img src="<?php bloginfo('template_url'); ?>/assets/images/icon/telegram.svg" alt="telegram icon" class="social-img">
           </a>
           <a class="social-item" href="#">
-            <img src="images/icon/whatsapp.svg" alt="whatsapp icon" class="social-img">
+            <img src="<?php bloginfo('template_url'); ?>/assets/images/icon/whatsapp.svg" alt="whatsapp icon" class="social-img">
           </a>
           <a class="social-item" href="#">
-            <img src="images/icon/facebook.svg" alt="facebook icon" class="social-img">
+            <img src="<?php bloginfo('template_url'); ?>/assets/images/icon/facebook.svg" alt="facebook icon" class="social-img">
           </a>
         </div>
-        <img src="images/ford-mustang.png" alt="ford mustang" class="header__image">
+        <img src="<?php bloginfo('template_url'); ?>/assets/images/ford-mustang.png" alt="ford mustang" class="header__image">
       </div>
 
     </div>

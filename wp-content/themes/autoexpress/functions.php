@@ -1,4 +1,5 @@
 <?php
+//Хуки WordPress – это функции, которые позволяют вам манипулировать процедурой без изменения файла в ядре WordPress.
 
 add_action( 'wp_enqueue_scripts', function() { //хук-событие
     //for header.php
