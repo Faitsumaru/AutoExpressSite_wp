@@ -108,48 +108,36 @@ Template Name: home
 
           <h2 class="auto__title main-title">ПРИГНАННЫЕ НАМИ АВТО</h2>
           <div class="auto__slider">
-            <div class="slider__item">
+            
+          <?php //Цикл the loop
+            global $post;
+
+            $myposts = get_posts([ 
+              'numberposts' => -1,
+            ]);
+
+            if( $myposts ){
+              foreach( $myposts as $post ){
+                setup_postdata( $post );
+          ?>
+          <!-- Вывод постов, функции цикла: the_title() и т.д. -->
+          <div class="slider__item">
               <div class="slider__item-box">
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/auto-slider-1.jpg" alt="infiniti car" class="slider-img">
-                <p class="slider__name">INFINITI QX50 2016 г.</p>
-                <p class="slider__text">Экономия 4500 $</p>
+
+                <?php the_post_thumbnail(
+                  array(380, 250), //img size
+                  array(
+                    'class' => 'slider-img'
+                  )
+                ); ?>
+                
+                <p class="slider__name"><?php the_title(); ?></p>
+                <p class="slider__text"><?php the_content(); ?></p>
               </div>
-            </div>
-            <div class="slider__item">
-              <div class="slider__item-box">
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/auto-slider-2.jpg" alt="tesla car" class="slider-img">
-                <p class="slider__name"> TESLA MODEL 3 2018 г.</p>
-                <p class="slider__text">Экономия 5500 $</p>
-              </div>
-            </div>
-            <div class="slider__item">
-              <div class="slider__item-box">
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/auto-slider-3.jpg" alt="lexus car" class="slider-img">
-                <p class="slider__name"> LEXUS ES250 2014 г.</p>
-                <p class="slider__text">Экономия 3250 $</p>
-              </div>
-            </div>
-            <div class="slider__item">
-              <div class="slider__item-box">
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/auto-slider-1.jpg" alt="infiniti car" class="slider-img">
-                <p class="slider__name">INFINITI QX50 2016 г.</p>
-                <p class="slider__text">Экономия 4500 $</p>
-              </div>
-            </div>
-            <div class="slider__item">
-              <div class="slider__item-box">
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/auto-slider-2.jpg" alt="tesla car" class="slider-img">
-                <p class="slider__name"> TESLA MODEL 3 2018 г.</p>
-                <p class="slider__text">Экономия 5500 $</p>
-              </div>
-            </div>
-            <div class="slider__item">
-              <div class="slider__item-box">
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/auto-slider-3.jpg" alt="lexus car" class="slider-img">
-                <p class="slider__name"> LEXUS ES250 2014 г.</p>
-                <p class="slider__text">Экономия 3250 $</p>
-              </div>
-            </div>
+          </div>
+
+          <?php } } wp_reset_postdata(); /*Сбрасываем $post*/ ?>
+
           </div>
 
         </div>
