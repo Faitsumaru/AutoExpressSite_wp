@@ -10,4 +10,9 @@ $(function() {
         autoplay: true,
         autofplaySpeed: 7000
     });
+
+    // function contactNotify() {
+    //     alert('Ваше заявка успешно отправлена!\nБлагодарим вас за потраченное время!');
+    // }
+    //$('.contacts__btn').on('click', contactNotify);
 });

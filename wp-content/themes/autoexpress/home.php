@@ -109,34 +109,35 @@ Template Name: home
           <h2 class="auto__title main-title">ПРИГНАННЫЕ НАМИ АВТО</h2>
           <div class="auto__slider">
             
-          <?php //Цикл the loop
-            global $post;
+            <?php //Цикл (the loop), проверяющий, есть ли посты и выводящий их
+              global $post;
 
-            $myposts = get_posts([ 
-              'numberposts' => -1,
-            ]);
+              $myposts = get_posts([ 
+                'numberposts' => -1, //-1 выводи все имеющиеся посты
+              ]);
 
-            if( $myposts ){
-              foreach( $myposts as $post ){
-                setup_postdata( $post );
-          ?>
-          <!-- Вывод постов, функции цикла: the_title() и т.д. -->
-          <div class="slider__item">
-              <div class="slider__item-box">
+              if( $myposts ){
+                foreach( $myposts as $post ){
+                  setup_postdata( $post );
+            ?>
+            
+            <!-- Вывод постов, функции цикла: the_title() и т.д. -->
+            <div class="slider__item">
+                <div class="slider__item-box">
 
-                <?php the_post_thumbnail(
-                  array(380, 250), //img size
-                  array(
-                    'class' => 'slider-img'
-                  )
-                ); ?>
-                
-                <p class="slider__name"><?php the_title(); ?></p>
-                <p class="slider__text"><?php the_content(); ?></p>
-              </div>
-          </div>
+                  <?php the_post_thumbnail(
+                    array(380, 250), //img size
+                    array(
+                      'class' => 'slider-img'
+                    )
+                  ); ?>
+                  
+                  <p class="slider__name"><?php the_title(); ?></p>
+                  <p class="slider__text"><?php the_content(); ?></p>
+                </div>
+            </div>
 
-          <?php } } wp_reset_postdata(); /*Сбрасываем $post*/ ?>
+            <?php } } wp_reset_postdata(); /*Сбрасываем $post*/ ?>
 
           </div>
 
@@ -175,9 +176,7 @@ Template Name: home
 
           <form action="" class="contacts__form">
             <h2 class="contacts__form-title main-title">Оставить заявку</h2>
-            <input type="text" class="contacts__input" placeholder="Как Вас зовут?">
-            <input type="text" class="contacts__input" placeholder="Ваш номер телефона">
-            <button type="submit" class="contacts__btn button">Отправить заявку</button>
+            <?php echo do_shortcode('[contact-form-7 id="32" title="Contact form"]') ?>
           </form>
 
         </div>

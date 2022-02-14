@@ -18,7 +18,18 @@ add_action( 'wp_enqueue_scripts', function() { //хук-событие
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/js/slick.min.js', array('jquery'), 'null', true );
     wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), 'null', true );
+
+    wp_add_inline_script('main', '$( ".contacts__btn" ).click(function() {
+        alert( "Ваше заявка успешно отправлена!\nБлагодарим вас за потраченное время!");
+      });');
+
+    show_admin_bar( false );
 });
+
+add_action('get_header', 'my_filter_head');
+function my_filter_head() {
+  remove_action('wp_head', '_admin_bar_bump_cb'); //delete 32px space from admin-panel
+}
 
 add_theme_support('post-thumbnails'); //хук-функция иконки сайта
 add_theme_support('title-big'); //хук-ф-я нащвания сайта
