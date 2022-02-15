@@ -168,7 +168,9 @@ Template Name: home
               <li class="contacts__item">
                 <h6 class="contacts__item-title">Телефон</h6>
                 <p class="contacts__item-text">
-                  +7 (905) 555 66 77
+                <a href="tel:<?php the_field('phone-number'); ?>">
+                  <?php the_field('phone'); ?>
+                </a>
                 </p>
               </li>
             </ul>

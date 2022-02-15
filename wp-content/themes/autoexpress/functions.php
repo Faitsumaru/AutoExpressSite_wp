@@ -35,4 +35,36 @@ add_theme_support('post-thumbnails'); //хук-функция иконки са�
 add_theme_support('title-big'); //хук-ф-я нащвания сайта
 add_theme_support('custom-logo'); //хук-ф-я кнопка изменения логотипа
 
+
+//svg-start--
+add_filter( 'upload_mimes', 'svg_upload_allow' );
+# Добавляет SVG в список разрешенных для загрузки файлов.
+function svg_upload_allow( $mimes ) {
+	$mimes['svg']  = 'image/svg+xml';
+
+	return $mimes;
+}
+
+add_filter( 'wp_prepare_attachment_for_js', 'show_svg_in_media_library' );
+
+# Формирует данные для отображения SVG как изображения в медиабиблиотеке.
+function show_svg_in_media_library( $response ) {
+
+	if ( $response['mime'] === 'image/svg+xml' ) {
+
+		// Без вывода названия файла
+		$response['sizes'] = [
+			'medium' => [
+				'url' => $response['url'],
+			],
+			// при редактирования картинки
+			'full' => [
+				'url' => $response['url'],
+			],
+		];
+	}
+
+	return $response;
+}
+//svg-end--
 ?>

@@ -3,20 +3,18 @@
     <div class="container">
       <div class="footer__inner">
 
-        <a href="#header" class="logo">
-          <img src="<?php bloginfo('template_url'); ?>/assets/images/logo.svg" alt="" class="logo__img">
-        </a>
+        <?php the_custom_logo(); ?>  <!--logotype-->
         <div class="social">
-          <a class="social-item" href="#">
+          <a class="social-item" href="<?php the_field('instagram-link');?>" target="_blank">
             <img src="<?php bloginfo('template_url'); ?>/assets/images/icon/instagram.svg" alt="instagram icon" class="social-img">
           </a>
-          <a class="social-item" href="#">
+          <a class="social-item" href="<?php the_field('telegram-link');?>" target="_blank">
             <img src="<?php bloginfo('template_url'); ?>/assets/images/icon/telegram.svg" alt="telegram icon" class="social-img">
           </a>
-          <a class="social-item" href="#">
+          <a class="social-item" href="<?php the_field('whatsapp-link');?>" target="_blank">
             <img src="<?php bloginfo('template_url'); ?>/assets/images/icon/whatsapp.svg" alt="whatsapp icon" class="social-img">
           </a>
-          <a class="social-item" href="#">
+          <a class="social-item" href="<?php the_field('facebook-link');?>" target="_blank">
             <img src="<?php bloginfo('template_url'); ?>/assets/images/icon/facebook.svg" alt="facebook icon" class="social-img">
           </a>
         </div>

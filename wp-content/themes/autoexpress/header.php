@@ -24,12 +24,9 @@
     <div class="container">
 
       <div class="header__top">
-        <a href="#footer" class="logo">
-          <img src="<?php bloginfo('template_url'); ?>/assets/images/logo.svg" alt="" class="logo__img"> 
-          <!--bloginfo() - выводит информацию о сайте (подр: https://wp-kama.ru/function/bloginfo)-->
-        </a>
-        <a href="tel:+300505556677" class="phone">
-          <h2>+7 (905) 555 66 77</h2>
+        <?php the_custom_logo(); ?> <!--logotype-->
+        <a href="tel:<?php the_field('phone-number'); ?>">
+          <h2><?php the_field('phone'); ?></h2>
         </a>
       </div>
 
@@ -41,16 +38,17 @@
         </p>
         <a href="#" class="button">КОНСУЛЬТАЦИЯ ЭКСПЕРТА</a>
         <div class="social">
-          <a class="social-item" href="#">
+          <a class="social-item" href="<?php the_field('instagram-link');?>" target="_blank">
             <img src="<?php bloginfo('template_url'); ?>/assets/images/icon/instagram.svg" alt="instagram icon" class="social-img">
+             <!--bloginfo() - выводит информацию о сайте (подр: https://wp-kama.ru/function/bloginfo)-->
           </a>
-          <a class="social-item" href="#">
+          <a class="social-item" href="<?php the_field('telegram-link');?>" target="_blank">
             <img src="<?php bloginfo('template_url'); ?>/assets/images/icon/telegram.svg" alt="telegram icon" class="social-img">
           </a>
-          <a class="social-item" href="#">
+          <a class="social-item" href="<?php the_field('whatsapp-link');?>" target="_blank">
             <img src="<?php bloginfo('template_url'); ?>/assets/images/icon/whatsapp.svg" alt="whatsapp icon" class="social-img">
           </a>
-          <a class="social-item" href="#">
+          <a class="social-item" href="<?php the_field('facebook-link');?>" target="_blank">
             <img src="<?php bloginfo('template_url'); ?>/assets/images/icon/facebook.svg" alt="facebook icon" class="social-img">
           </a>
         </div>
