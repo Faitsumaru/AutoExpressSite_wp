@@ -31,10 +31,10 @@
       </div>
 
       <div class="header__content">
-        <h1 class="header__title">авто из сша “под ключ”</h1>
-        <h2 class="header__subtitle">ЗАКАЖИ СЕБЕ АВТО ИЗ США С ВЫГОДОЙ ДО 40%</h2>
+        <h1 class="header__title"><?php the_field('main-title'); ?></h1>
+        <h2 class="header__subtitle"><?php the_field('main-subtitle'); ?></h2>
         <p class="header__text">
-          Подбор, покупка, доставка, растаможка, ремонт, оформление по договору
+          <?php the_field('main-text'); ?>
         </p>
         <a href="#" class="button">КОНСУЛЬТАЦИЯ ЭКСПЕРТА</a>
         <div class="social">
@@ -52,7 +52,7 @@
             <img src="<?php bloginfo('template_url'); ?>/assets/images/icon/facebook.svg" alt="facebook icon" class="social-img">
           </a>
         </div>
-        <img src="<?php bloginfo('template_url'); ?>/assets/images/ford-mustang.png" alt="ford mustang" class="header__image">
+        <img src="<?php the_field('main-img'); ?>" alt="ford mustang" class="header__image">
       </div>
 
     </div>

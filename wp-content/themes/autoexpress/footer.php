@@ -18,7 +18,7 @@
             <img src="<?php bloginfo('template_url'); ?>/assets/images/icon/facebook.svg" alt="facebook icon" class="social-img">
           </a>
         </div>
-        <a href="#" class="footer__link">Политика конфиденциальности</a>
+        <a href="<?php echo get_page_link(111); ?>" class="footer__link" target="_blank">Политика конфиденциальности</a> <!--111-record page's id-->
 
       </div>
     </div>

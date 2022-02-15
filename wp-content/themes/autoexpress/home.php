@@ -14,56 +14,10 @@ Template Name: home
         <h2 class="services__title main-title">НАШИ УСЛУГИ</h2>
         <div class="services__inner">
           <div class="services__content-box">
-            <div class="services__content-textbox">
-              <h6 class="services__content-title">Почему ввоз авто из США?</h6>
-              <p>
-                Мы сравнили рынки США с Европейскими и поняли, что покупка автомобиля в Америке выгоднее 
-                в несколько раз, как бы парадоксально это не звучало. Это вызвано продуманной логистикой, 
-                уровнем развития сервисов по оцениванию состояния авто и самим процессом покупки автомобиля.
-              </p>
-              <p>
-                Большинство граждан США берут автомобиль в лизинг на несколько лет и все время эксплуатации 
-                сама лизинговая компания занимается постоянным ТО автомобиля, вследствие чего, машины из США 
-                – один из лучших выборов для автолюбителей России.
-              </p>
-            </div>
-            <div class="services__content-textbox">
-              <h6 class="services__content-title">Из-за чего такая низкая цена?</h6>
-              <p>
-                Битые автомобили из США выкупаются с аукционов страховых компаний. На этих аукционах машина 
-                теряет половину цены даже из-за минимальных повреждений. Если учитывать денежные затраты, 
-                а именно выкуп, доставку, таможню и ремонт, то цена аналогичного по состоянию автомобиля 
-                в России будет выше на 35-50%, а новые будут стоить космических денег.
-              </p>
-              <a href="#" class="button button--decor">КОНСУЛЬТАЦИЯ ЭКСПЕРТА</a>
-            </div>
+            <?php the_field('service-text'); ?>
+            <a href="#" class="button button--decor">КОНСУЛЬТАЦИЯ ЭКСПЕРТА</a>
           </div>
-          <ol class="services__list-box">
-            <li class="services__item">
-              <h3 class="services__item-title">Покупка авто</h3>
-              <p class="services__item-text">Подбор автомобиля и экспертная проверка</p>
-            </li>
-            <li class="services__item">
-              <h3 class="services__item-title">Доставка морем</h3>
-              <p class="services__item-text">Расчет оптимальной стоимости доставки авто</p>
-            </li>
-            <li class="services__item">
-              <h3 class="services__item-title">Растаможка авто</h3>
-              <p class="services__item-text">Прохождение таможенного оформления (2-3 дня)</p>
-            </li>
-            <li class="services__item">
-              <h3 class="services__item-title">Ремонт авто</h3>
-              <p class="services__item-text">Комплексный ремонт автомобиля на  СТО</p>
-            </li>
-            <li class="services__item">
-              <h3 class="services__item-title">Сертификация</h3>
-              <p class="services__item-text">Услуга предоставляется по желанию</p>
-            </li>
-            <li class="services__item">
-              <h3 class="services__item-title">Постановка на учет</h3>
-              <p class="services__item-text">Оформление автомобиля в России</p>
-            </li>
-          </ol>
+          <?php the_field('services-list'); ?>
         </div>
       </section>
 
@@ -71,32 +25,10 @@ Template Name: home
       <section class="benefits">
         <div class="benefits__inner">
 
-          <img src="<?php bloginfo('template_url'); ?>/assets/images/benefits-auto.png" alt="benefits auto" class="benefits__img">
+          <img src="<?php the_field('benefits-img'); ?>" alt="benefits auto" class="benefits__img">
           <div class="benefits__content">
             <h2 class="benefits__title main-title">ПОЧЕМУ МЫ?</h2>
-            <ul class="benefits__info">
-              <li class="benefits__item">
-                <h2 class="benefits__item-title">650</h2>
-                <h3 class="benefits__item-subtitle">успешно доставленных авто</h3>
-                <p>
-                  большой опыт пригона автомобилей из США под ключ, все клиенты остались довольны на 100%
-                </p>
-              </li>
-              <li class="benefits__item">
-                <h2 class="benefits__item-title">5</h2>
-                <h3 class="benefits__item-subtitle">лет на рынке России</h3>
-                <p>
-                  Работаем по всей территории России, работаем по договору с клиентами
-                </p>
-              </li>
-              <li class="benefits__item">
-                <h2 class="benefits__item-title">100 %</h2>
-                <h3 class="benefits__item-subtitle">доверия клиентов</h3>
-                <p>
-                  Онлайн отчетность. Вы всегда в курсе статуса подбора вашего авто. Фото и видео отчет
-                </p>
-              </li>
-            </ul>
+            <?php the_field('benefits-list-title'); ?>
           </div>
 
         </div>
@@ -113,7 +45,8 @@ Template Name: home
               global $post;
 
               $myposts = get_posts([ 
-                'numberposts' => -1, //-1 выводи все имеющиеся посты
+                'numberposts' => -1, //-1 вывод все имеющиеся посты
+                'category'    => 3
               ]);
 
               if( $myposts ){
@@ -154,15 +87,13 @@ Template Name: home
               <li class="contacts__item">
                 <h6 class="contacts__item-title">Адрес</h6>
                 <p class="contacts__item-text">
-                  Москва, ЮАО<br>
-                  ул. Кантемировская, д.7, к.3
+                  <?php the_field('address'); ?>
                 </p>
               </li>
               <li class="contacts__item">
                 <h6 class="contacts__item-title">Время работы</h6>
                 <p class="contacts__item-text">
-                  Пн-Сб: с 9:00 до 19:00,<br>
-                  Вс: выходной
+                  <?php the_field('working-hours'); ?>
                 </p>
               </li>
               <li class="contacts__item">
