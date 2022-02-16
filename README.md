@@ -1,10 +1,11 @@
 # **_Auto Express_**
 
+## About
 That's an 'Auto Express' site on WordPress, using PHP.
 
 > Please use OpenServer (on _Windows_) or MAMP (on _macOS_ & _Windows_) Apache & SQL local Servers
 
-* (ver. Feb 2022, created by Gleb 'Faitsuma' Kiryakov)
+(ver. Feb 2022, created by Gleb 'Faitsuma' Kiryakov)
 
 ## Documentation
 * About WordPress: 
