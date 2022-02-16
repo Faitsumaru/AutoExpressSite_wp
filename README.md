@@ -10,8 +10,12 @@ That's an 'Auto Express' site on WordPress, using PHP.
 * About WordPress: 
     * https://wordpress.com/en/;
     * https://wordpress.org/;
-* Best WordPress documentation: https://wp-kama.ru/handbook/cheatsheet;
-* MAMP documentation: https://documentation.mamp.info/;
-* OpenServer:
-    * Usage information: https://htmlacademy.ru/courses/intro-to-web-development/homeworks/25/steps/1;
-    * Documentation: https://ospanel.io/docs/;
+* WordPress documentation: 
+    * https://wp-kama.ru/handbook/cheatsheet;
+    * https://developer.wordpress.org/;
+* MAMP documentation: 
+    * macOS: https://documentation.mamp.info/en/MAMP-Mac/;
+    * Windows: https://documentation.mamp.info/en/MAMP-Windows/;
+* OpenServer documentation:
+    * Usage info: https://htmlacademy.ru/courses/intro-to-web-development/homeworks/25/steps/1;
+    * Docs: https://ospanel.io/docs/;
